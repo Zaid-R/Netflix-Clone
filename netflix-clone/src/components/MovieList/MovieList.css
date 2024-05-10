@@ -1,0 +1,9 @@
+main {
+    display: flex;
+    flex-grow: 1;
+    background-color: var(--backgroundColor);
+    padding: calc(2* var(--waveHeight)) 0;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
