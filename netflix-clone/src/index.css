@@ -14,7 +14,7 @@ body {
 
 :root {
   --favoriteButtonBorderRadius:10px;
-  --cardBorderRadius:10%;
+  --cardBorderRadius:30px;
   --waveHeight:50px;
   --backgroundColor:#393E46;
   --darkColor:#222831;

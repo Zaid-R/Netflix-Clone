@@ -7,3 +7,9 @@ main {
     align-items: center;
     justify-content: space-evenly;
 }
+
+main > .spinner-border {
+    height: 100px;
+    width: 100px;
+    border-width: 10px;
+}

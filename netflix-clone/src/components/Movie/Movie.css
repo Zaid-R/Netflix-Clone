@@ -3,9 +3,9 @@
     max-height: fit-content; */
     display: flex;
     padding: 5px;
-    margin-bottom: 30px;
+    margin:0 2% 30px;
     /* position: relative; */
-    background:linear-gradient(135deg, var(--primaryColor) 25%, var(--darkColor) 25%,var(--darkColor) 50%,var(--grayColor) 50%,var(--grayColor) 75%,var(--backgroundColor) 75%, var(--backgroundColor) 100% ) ;
+    background: linear-gradient(135deg, var(--primaryColor) 25%, var(--darkColor) 25%, var(--darkColor) 50%, var(--grayColor) 50%, var(--grayColor) 75%, var(--backgroundColor) 75%, var(--backgroundColor) 100%);
     /* background: linear-gradient(to right, var(--primaryColor), var(--darkColor)); */
     border-radius: var(--cardBorderRadius);
     -webkit-border-radius: var(--cardBorderRadius);
@@ -19,10 +19,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem ;
+    width:min-content;
     background-color: var(--primaryColor);
     /* background: linear-gradient(45deg, var(--darkColor), var(--primaryColor)); */
-    width: 320px;
+    /* width: 320px; */
     border-radius: var(--cardBorderRadius);
     /*box-shadow: 0px 1px 25px 0px rgba(0, 0, 0, 0.3);
     */
@@ -35,8 +36,8 @@
 
 .card img {
     border-radius: var(--cardBorderRadius);
-    height: 300px;
-    width: 300px;
+    height: calc(1.4* 278px);
+    width: calc(1.4* 185px);
     margin: 0 auto 10px;
     -webkit-border-radius: var(--cardBorderRadius);
     -moz-border-radius: var(--cardBorderRadius);
@@ -46,30 +47,42 @@
 
 .card p {
     text-align: center;
-    color: var(--grayColor);
-    font-size: 18px;
-    font-weight: 400;
+    word-wrap: break-word;
+    color: 
+    var(--darkColor);
+    font-size: 20px;
+    font-weight: bold;
     font-family: Poppins;
     line-height: 1.6;
 }
 
-.btn a {
-    display: flex;
-    color: #f5f5f5;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+button {
+    overflow: hidden;
+    border:none;
     border-radius: var(--favoriteButtonBorderRadius);
-    text-decoration: none;
-    padding: 5px;
-    background-image: linear-gradient(115deg, var(--darkColor), var(--primaryColor), var(--grayColor), var(--backgroundColor));
     -webkit-border-radius: var(--favoriteButtonBorderRadius);
     -moz-border-radius: var(--favoriteButtonBorderRadius);
     -ms-border-radius: var(--favoriteButtonBorderRadius);
     -o-border-radius: var(--favoriteButtonBorderRadius);
 }
+button p {
+    display: flex;
+    margin: 0;
+    color: #f5f5f5 !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* border-radius: var(--favoriteButtonBorderRadius); */
+    text-decoration: none;
+    padding: 5px;
+    background-image: linear-gradient(115deg, var(--darkColor), var(--primaryColor), var(--grayColor), var(--backgroundColor));
+    /* -webkit-border-radius: var(--favoriteButtonBorderRadius);
+    -moz-border-radius: var(--favoriteButtonBorderRadius);
+    -ms-border-radius: var(--favoriteButtonBorderRadius);
+    -o-border-radius: var(--favoriteButtonBorderRadius); */
+}
 
-.btn a:hover {
+button p:hover {
     animation: rotate 2s linear infinite;
     -webkit-animation: rotate 2s linear infinite;
 }
@@ -81,7 +94,7 @@
     }
 }
 
-.btn a span {
+button p span {
     /* height: 88%;
   width: 96%; */
     padding: 5px 10px;

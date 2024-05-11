@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './components/Home/Home.js';
 import ModalMovie from './components/ModalMovie/ModalMovie.js';
 import Navbar from './components/Navbar/Navbar.js';
+import FavList from './components/FavList/FavList.js';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movie/:id" element={<ModalMovie />} />
+          <Route path="/favlist" element={<FavList/>}/>
         </Routes>
       </main>
       <Footer />

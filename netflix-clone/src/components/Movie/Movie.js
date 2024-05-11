@@ -1,24 +1,32 @@
 
-import image from '../../data/default-image.jpg';
 import './Movie.css';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import ModalMovie from '../ModalMovie/ModalMovie.js';
 
 function Movie({ movie }) {
+    const [isShown, setIsShow] = useState(false);
+    const handleClose = ()=>setIsShow(false);
+    const handleShowModal = ()=>{
+        setIsShow(true)
+        console.log("isShown from handle show modal : ", isShown)
+    }
+    
+    useEffect(()=> console.log("isShown in first render : ", isShown),true)
     return (
-        <div className="card-border-wrap">
-            <div className="card">
-                <img src={image} />
-                <p>{movie.title || "No Title"}</p>
-                <Link to={`/movie/${movie.id}`}>
-                    {/* <Button variant="outline-primary" onClick={console.log('shit')}>Add To Favorite</Button> */}
-                    <div class="btn">
-                        <a href="#"><span>Add To Favorite</span></a>
-                    </div>
-                </Link>
-
-            </div>
+        
+    <>
+    <div className="card-border-wrap" key={movie.id}>
+        <div className="card">
+            <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} />
+            <p>{movie.title || "No Title"}</p>
+                <button onClick={handleShowModal}>
+                    <p><span>Add To Favorite</span></p>
+                </button>
         </div>
+    </div>
+         <ModalMovie movie={movie} handleClose={handleClose} isShown={isShown}/>
+    </>
+
     );
 }
 

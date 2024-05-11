@@ -7,9 +7,17 @@ function Navbar() {
             <h1>
                 Netflix Clone
             </h1>
-            <h3>
+            <span>
+                <h4>
+            <Link to="/favlist">Favorite List
+                </Link>
+            </h4>
+            <h4>
                 <Link to="/">Home</Link>
-            </h3>
+            </h4>
+            </span>
+            
+            
         </nav>
     )
 }

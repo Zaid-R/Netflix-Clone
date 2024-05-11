@@ -13,11 +13,20 @@ nav h1 {
     margin: auto 0;
 }
 
-h3 {
-    margin: auto 0;
+span {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+h4 {
+    /* margin: auto ; */
+    display: flex;
+    text-align: center;
+    align-items: center;
     color:var(--darkColor);
     background-color: var(--primaryColor);
     padding: 5px ;
+    margin-left: 10px;
     border:2px solid var(--grayColor);
     transition-duration: 0.5s;
     border-radius: 10px;
@@ -27,14 +36,14 @@ h3 {
     -o-border-radius: 10px;
 }
 
-h3:hover {
+h4:hover {
     color:white;
     background-color: var(--backgroundColor);
     /* box-shadow: -3px 5px 3px 0px var(--grayColor); */
     border:2px solid var(--grayColor);
 }
 
-h3 a {
+h4 a {
     text-decoration: none;
     color:inherit;
     padding: 0 10px;
