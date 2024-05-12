@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import './ModalMovie.css'
 import Form from 'react-bootstrap/Form';
 
-function ModalMovie({ movie, isShown, handleClose }) {
+function ModalMovie({ movie, isShown, handleClose, isFav ,refreshPage}) {
 
     const [isPosting, setIsPosting] = useState(false);
 
@@ -43,15 +43,33 @@ function ModalMovie({ movie, isShown, handleClose }) {
         handleClose();
         setIsPosting(false);
     }
+
+    async function updateComment(e) {
+        e.preventDefault();
+        setIsPosting(true);
+        const obj = {
+            // id: movie.id,
+            // title: movie.title,
+            // release_date: movie.release_date,
+            // poster_path: movie.poster_path,
+            // overview: movie.overview,
+            comment: e.target.comment.value
+        }
+        const updateUrl = `http://localhost:3001/UPDATE/${movie.id}`;
+        const response = await axios.put(updateUrl, obj);
+        refreshPage(response.data)
+        handleClose();
+        setIsPosting(false);
+    }
     return (<>
         <Modal show={isShown} onHide={handleClose} key={movie.id}>
             <Modal.Header closeButton>
                 <Modal.Title>{movie.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt="Movie Poster" />
+                <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt="Movie Poster" />
                 <br />
-                <Form onSubmit={addMovie}>
+                <Form onSubmit={isFav?updateComment: addMovie}>
                     <Form.Group className="mb-3">
                         <Form.Label>Comment</Form.Label>
                         <Form.Control name="comment" type="text" placeholder="Enter comment" />
@@ -61,8 +79,8 @@ function ModalMovie({ movie, isShown, handleClose }) {
                             Close
                         </Button>
                         {
-                            !isPosting && <Button variant="primary" type="submit">
-                                Add To Favorite
+                            !isPosting && <Button variant={isFav ? "warning" : "primary"} type="submit">
+                                {isFav ? "Update" : "Add To Favorite"}
                             </Button>
                         }
                         {

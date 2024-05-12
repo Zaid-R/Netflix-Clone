@@ -26,8 +26,8 @@
 img {
     display: flex;
     margin:  0 auto;
-    height: calc(1.4* 278px);
-    width: calc(1.4* 185px);
+    /* height: calc(1.4* 278px);
+    width: calc(1.4* 185px); */
     border-radius: var(--cardBorderRadius);
     -webkit-border-radius: var(--cardBorderRadius);
     -moz-border-radius: var(--cardBorderRadius);

@@ -36,8 +36,9 @@
 
 .card img {
     border-radius: var(--cardBorderRadius);
-    height: calc(1.4* 278px);
-    width: calc(1.4* 185px);
+
+    /* height: calc(1.4* 278px);
+    width: calc(1.4* 185px); */
     margin: 0 auto 10px;
     -webkit-border-radius: var(--cardBorderRadius);
     -moz-border-radius: var(--cardBorderRadius);
@@ -54,6 +55,12 @@
     font-weight: bold;
     font-family: Poppins;
     line-height: 1.6;
+}
+
+.comment {
+    font-size: 18px !important;
+    font-weight: normal !important;
+    color:white !important;
 }
 
 button {
@@ -106,4 +113,10 @@ button p span {
     -moz-border-radius: var(--favoriteButtonBorderRadius);
     -ms-border-radius: var(--favoriteButtonBorderRadius);
     -o-border-radius: var(--favoriteButtonBorderRadius);
+}
+
+.fav-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
