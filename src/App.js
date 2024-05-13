@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/Footer/Footer.js';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from "react-router-dom";
+import Home from './components/Home/Home.js';
+import ModalMovie from './components/ModalMovie/ModalMovie.js';
+import Navbar from './components/Navbar/Navbar.js';
+import FavList from './components/FavList/FavList.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favlist" element={<FavList/>}/>
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 }
 

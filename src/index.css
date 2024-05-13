@@ -1,10 +1,33 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --favoriteButtonBorderRadius:10px;
+  --cardBorderRadius:30px;
+  --waveHeight:50px;
+  --backgroundColor:#393E46;
+  --darkColor:#222831;
+  --primaryColor:#3586ff;
+  --grayColor: #EEEEEE;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color:var(--grayColor)
 }
 
 code {
